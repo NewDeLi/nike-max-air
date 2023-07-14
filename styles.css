@@ -1,0 +1,31 @@
+:root {
+    --white-color-bg: #F2F2F2;
+    --white-color: #FFFFFF;
+    --dark-color: #000000;
+    --blur-color: #fafafa80;
+}
+
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
