@@ -11,13 +11,17 @@
 *::after,
 *::before {
     box-sizing: border-box;
+
 }
 
 
+html,
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+
 }
 
 a {
@@ -28,4 +32,245 @@ a {
 ul {
     list-style-type: none;
     margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 7rem;
+    z-index: 10000;
+}
+
+nav .logo {
+    margin-left: 4.3rem;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    max-width: 62vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    margin: 0 auto;
+    border-radius: 3.1rem;
+    background-color: #fafafa80;
+    backdrop-filter: blur(9.51399px);
+}
+
+nav ul li>a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: .8;
+}
+
+nav .basket {
+    display: flex;
+    align-items: center;
+    margin-right: 4.3rem;
+}
+
+/*end of navigation*/
+.wrapper {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+
+@media (min-width:1024px) {
+    .wrapper {
+        max-width: 82vw;
+        margin-left: 11vw;
+    }
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media(min-width:1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+.hero .headline-text {
+    width: 100%;
+
+}
+
+.hero .headline-text h1 {
+    font-size: 5.6rem;
+    font-weight: bold;
+}
+
+.hero .headline-text p {
+    font-size: 1.8rem;
+}
+
+@media (min-width:1024px) {
+    .hero .headline-text {
+        max-width: 430px;
+        align-self: center;
+    }
+
+    .hero .headline-text p {
+        max-width: 281px;
+    }
+}
+
+/*end of headline and text*/
+
+.hero .product-images {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    max-height: 50vw;
+    width: 100%;
+}
+
+.hero .product-images img {
+    width: 100%;
+    max-width: 50%;
+    height: auto;
+}
+
+.hero .product-images img:first-child {
+
+    transform: rotate(90deg) translate(0, -10vw);
+}
+
+.hero .product-images img:last-child {
+    transform: rotate(90deg) translate(0, 10vw);
+}
+
+@media(min-width:1024px) {
+    .hero .product-images {
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 100%;
+    }
+
+    .hero .product-images img {
+        max-width: 100%;
+        max-height: 48%;
+        /*adjust space between shoes here*/
+    }
+
+    .hero .product-images img:first-child {
+        transform: rotate(0deg) translate(5vw, 0);
+    }
+
+    .hero .product-images img:last-child {
+        transform: rotate(0deg) translate(-15vw, 0);
+        align-self: flex-end;
+    }
+}
+
+/*end of product images*/
+
+.hero .bottom {
+    display: flex;
+
+}
+
+@media(min-width:1024px) {
+    .bottom {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        justify-content: space-between;
+    }
+}
+
+.hero .bottom .info-group {
+    flex: 1;
+    align-self: flex-end;
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    opacity: .5;
+}
+
+@media(min-width:500px) {
+    .hero .bottom .info-group {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.hero .bottom .evaluation {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/*end of info group*/
+.hero .bottom .add-to-basket-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.hero .bottom .add-to-basket-group .custom-select {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 4rem);
+    position: relative;
+    margin-left: 3.3rem;
+    padding-bottom: 1.6rem;
+    border-bottom: .5px solid rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.hero .bottom .add-to-basket-group .custom-select select {
+    all: unset;
+    width: 100%;
+    background-color: var(--white-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+}
+
+.hero .bottom .add-to-basket-group .custom-select .icon-container {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+
+.hero .bottom .add-to-basket-group button {
+    all: unset;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 2.5rem 3.3rem;
+    border-radius: 3.1rem;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.hero .bottom .add-to-basket-group span {
+    vertical-align: middle;
+    font-size: 3rem;
 }

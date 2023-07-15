@@ -31,19 +31,25 @@
         <div class="basket">
           <a href="#"><img src="./images/basket.svg" alt="basket icon" /></a>
         </div>
+        <div></div>
       </nav>
       <!--end of Desktop navigation-->
       <div class="wrapper">
         <div class="hero">
           <div class="headline-text">
-            <h1>Feel strong like Lebron</h1>
+            <h1>
+              <i
+                >Feel strong<br />
+                like Lebron</i
+              >
+            </h1>
             <p>
-              The LeBron 17 LMTD features a large Max Air unit in the heel and
-              Zoom Air cushioning for extra comfort.
+              The LeBron 17 LMTD features a large <b>Max Air</b> unit in the
+              heel and Zoom Air cushioning for extra <b>comfort</b>.
             </p>
             <p>
-              Knit material wraps your feet for lightweight support so you can
-              make quick, powerful moves like a champ.
+              Knit material wraps your feet for <b>lightweight</b> support so
+              you can make quick, powerful moves like a champ.
             </p>
           </div>
           <div class="product-images">
@@ -66,16 +72,20 @@
             </div>
             <div class="add-to-basket-group">
               <form action="#">
-                <label for="price" id="price" class="screenreaderonly"
-                  >Select a price</label
-                >
-                <select name="price" id="price">
-                  <option value="43">EU 43</option>
-                  <option value="43">EU 43</option>
-                  <option value="43">EU 43</option>
-                </select>
+                <label for="price" id="price" hidden>Select a price</label>
+                <div class="custom-select">
+                  <select name="price" id="price">
+                    <option value="43">EU 43</option>
+                    <option value="43">EU 43</option>
+                    <option value="43">EU 43</option>
+                  </select>
+                  <div class="icon-container">
+                    <img src="./images/chevron.svg" alt="chevron down icon" />
+                  </div>
+                </div>
                 <br />
                 <button>Add to basket</button>
+                <span>$249</span>
               </form>
             </div>
           </div>
