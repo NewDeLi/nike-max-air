@@ -192,6 +192,7 @@ nav .basket {
         width: 100%;
         position: absolute;
         bottom: 0;
+        margin-bottom: 7rem;
         justify-content: space-between;
     }
 }
