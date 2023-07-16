@@ -44,6 +44,13 @@ nav {
     width: 100vw;
     max-height: 7rem;
     z-index: 10000;
+    opacity: 0;
+    transition: all 2000ms ease-out;
+    transition-delay: 1000ms;
+}
+
+nav.fadeIn {
+    opacity: 1;
 }
 
 nav .logo {
@@ -65,10 +72,14 @@ nav ul {
     backdrop-filter: blur(9.51399px);
 }
 
-nav ul li>a {
+nav ul li .link {
     font-size: 1.6rem;
     font-weight: 500;
     opacity: .8;
+}
+
+nav ul .link.active {
+    font-weight: bolder;
 }
 
 nav .basket {
@@ -242,7 +253,12 @@ nav .basket {
 
 .hero .headline-text {
     width: 100%;
+    transform: translateY(-100vw);
+    transition: all 750ms ease-in-out;
+}
 
+.hero .headline-text.slideIn {
+    transform: translateY(0);
 }
 
 .hero .headline-text h1 {
@@ -258,6 +274,12 @@ nav .basket {
     .hero .headline-text {
         max-width: 430px;
         align-self: center;
+        transform: translateX(-100vw);
+        transition: all 2000ms ease-in-out;
+    }
+    
+    .hero .headline-text.slideIn {
+        transform: translateX(0);
     }
 
     .hero .headline-text p {
@@ -283,10 +305,20 @@ nav .basket {
 
 .hero .product-images img:first-child {
 
-    transform: rotate(90deg) translate(0, -10vw);
+    transform: rotate(90deg) translate(0, -100vw);
+    transition: all 1500ms ease-in-out;
 }
 
 .hero .product-images img:last-child {
+    transform: rotate(90deg) translate(0, 100vw);
+    transition: all 1500ms ease-in-out;
+}
+
+.hero .product-images img:first-child.slideIn {
+    transform: rotate(90deg) translate(0, -10vw);
+}
+
+.hero .product-images img:last-child.slideIn {
     transform: rotate(90deg) translate(0, 10vw);
 }
 
@@ -304,12 +336,22 @@ nav .basket {
     }
 
     .hero .product-images img:first-child {
-        transform: rotate(0deg) translate(5vw, 0);
+        transform: translate(5vw, -1000px);
+        transition: all 1000ms ease-in-out;
     }
 
     .hero .product-images img:last-child {
-        transform: rotate(0deg) translate(-15vw, 0);
         align-self: flex-end;
+        transform: translate(-15vw, 1000px);
+        transition: all 1500ms ease-in-out;
+    }
+
+    .hero .product-images img:first-child.slideIn {
+        transform: translate(5vw, 0);
+    }
+
+    .hero .product-images img:last-child.slideIn {
+        transform: translate(-15vw, 0);
     }
 }
 
@@ -318,7 +360,13 @@ nav .basket {
 .hero .bottom {
     display: flex;
     margin-bottom: 7rem;
+    opacity: 0;
+    transition: all 2000ms ease-out;
+    transition-delay: 1000ms;
+}
 
+.hero .bottom.fadeIn {
+    opacity: 1;
 }
 
 @media(min-width:1024px) {
