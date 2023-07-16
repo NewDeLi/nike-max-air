@@ -41,7 +41,7 @@ nav {
     padding: 2rem 0;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     max-height: 7rem;
     z-index: 10000;
 }
@@ -75,9 +75,142 @@ nav .basket {
     display: flex;
     align-items: center;
     margin-right: 4.3rem;
+    order: 3;
 }
 
-/*end of navigation*/
+.mobil-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 3rem;
+}
+
+.burger-icon {
+    display: none;
+    order: 3;
+}
+
+.search-icon {
+    display: none;
+    order: 1;
+}
+
+
+/*end of desktop navigation*/
+
+@media(max-width:1024px) {
+    nav {
+        position: relative;
+    }
+
+    nav .logo {
+        flex: 1;
+    }
+
+    nav ul li:last-child {
+        display: none;
+    }
+
+    nav ul {
+        width: 1px;
+        visibility: visible;
+        opacity: 0;
+        transition: width 0s, visibility 0s, opacity 0.5s linear;
+        transform: translatex(150%);
+        transition: transform .5s ease-in-out;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.responsive {
+        position: absolute;
+        top: 7rem;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 35px;
+        gap: 35px;
+        transform: translatex(0);
+        visibility: visible;
+        opacity: 1;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .burger-icon {
+        display: block;
+    }
+
+    nav .basket {
+        margin: 0;
+    }
+
+    .search-icon {
+        display: block;
+
+    }
+
+    /*end of mobil navigation*/
+
+}
+
+#myBurger {
+    height: 30px;
+    width: 40px;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger,
+.hamburger.responsive {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    height: 3px;
+    width: 60%;
+    transition: all 0.4s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 3px;
+    transition: all 0.4s ease;
+}
+
+.hamburger::after {
+    top: 10px;
+}
+
+.hamburger.responsive {
+    background: rgba(0, 0, 0, 0);
+}
+
+.hamburger.responsive::before {
+    top: 0;
+    transform: rotate(45deg);
+    background: black;
+}
+
+.hamburger.responsive::after {
+    top: 0;
+    transform: rotate(135deg);
+    background: black;
+}
+
+/*end of burger icon animation*/
+
 .wrapper {
     max-width: 90vw;
     margin: 0 auto;
@@ -97,7 +230,7 @@ nav .basket {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 @media(min-width:1024px) {
@@ -184,6 +317,7 @@ nav .basket {
 
 .hero .bottom {
     display: flex;
+    margin-bottom: 7rem;
 
 }
 
@@ -192,7 +326,7 @@ nav .basket {
         width: 100%;
         position: absolute;
         bottom: 0;
-        margin-bottom: 7rem;
+        margin: 0;
         justify-content: space-between;
     }
 }
